@@ -1,0 +1,30 @@
+5
+4 O(1)
+F a 11 98
+F b 36 n
+E
+E
+10 O(n^2)
+F a 35 79
+F b 5 n
+F c 34 66
+F d 60 n
+F e 66 n
+E
+E
+E
+E
+E
+6 O(n^3)
+F a 12 79
+F b 18 82
+F c 5 n
+E
+E
+E
+2 O(1)
+F a 61 n
+E
+2 O(n^1)
+F a 36 n
+E

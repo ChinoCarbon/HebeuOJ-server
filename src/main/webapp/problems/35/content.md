@@ -1,0 +1,2 @@
+$a^2+1$
+![1f120c309849dae891cfce3eef49d51.jpg](http://localhost:8080/webapps/img/2022-06-21T17:31:48.188935-20327ce3-5963-401f-b7a6-06cf4b2d229d-1f120c309849dae891cfce3eef49d51.jpg)
