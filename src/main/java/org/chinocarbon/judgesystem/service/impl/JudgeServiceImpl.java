@@ -30,7 +30,6 @@ public class JudgeServiceImpl implements JudgeService
 {
     JudgeDao judgeDao;
     ProblemDao problemDao;
-
     UserDao userDao;
 
     @Autowired
