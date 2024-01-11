@@ -57,20 +57,20 @@ public class JudgeServiceImpl implements JudgeService
         System.out.println(absoluteCompileMachinePath);
         System.out.println(absoluteJudgeMachinePath);
 
-        File file = new File(absoluteJudgementPath + "/" + judgement.getJudgementId());
-        System.out.println(absoluteJudgementPath + "/" + judgement.getJudgementId());
+        File file = new File(absoluteJudgementPath + File.separator + judgement.getJudgementId());
+        System.out.println(absoluteJudgementPath + File.separator + judgement.getJudgementId());
         System.out.println(file.mkdir());
 
         String fileBack = LanguageType.getType(judgement.getLanguageType()).toString().toLowerCase(Locale.ROOT);
-        FileWriter fileWriter = new FileWriter(absoluteJudgementPath + "/" + judgement.getJudgementId() + "/Main." + fileBack);
+        FileWriter fileWriter = new FileWriter(absoluteJudgementPath + File.separator + judgement.getJudgementId() + File.separator + "Main." + fileBack);
         fileWriter.write(judgement.getCode());
         fileWriter.close();
 
         Result result = new Result(judgement);
 
         CoreCompile coreCompile = new CoreCompile(LanguageType.getType(judgement.getLanguageType()),
-                absoluteFilePath + "/" + judgement.getProblemId(),
-                absoluteJudgementPath + "/" + judgement.getJudgementId(),
+                absoluteFilePath + File.separator + judgement.getProblemId(),
+                absoluteJudgementPath + File.separator + judgement.getJudgementId(),
                 absoluteCompileMachinePath);
 
         coreCompile.compile(result);
@@ -78,7 +78,7 @@ public class JudgeServiceImpl implements JudgeService
         userDao.addOne(judgement.getUserId());
         if(result.isCE())
         {
-            MySerializeUtil.mySerialize(result, absoluteJudgementPath + "/" + judgement.getJudgementId() + "/result.txt");
+            MySerializeUtil.mySerialize(result, absoluteJudgementPath + File.separator + judgement.getJudgementId() + File.separator + "result.txt");
             System.out.println("序列化原始对象完成！OK！");
             return result;
         }
@@ -101,7 +101,7 @@ public class JudgeServiceImpl implements JudgeService
             userDao.addPassOne(judgement.getUserId());
             problemDao.addAPass(judgement.getUserId(), judgement.getProblemId());
         }
-        MySerializeUtil.mySerialize(result, absoluteJudgementPath + "/" + judgement.getJudgementId() + "/result.txt");
+        MySerializeUtil.mySerialize(result, absoluteJudgementPath + File.separator + judgement.getJudgementId() + File.separator + "result.txt");
         System.out.println("序列化原始对象完成！OK！");
         return result;
     }

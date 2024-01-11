@@ -83,18 +83,9 @@ public class CoreCompile
     {
         switch (this.languageType)
         {
-            case C ->
-            {
-                compileC(result);
-            }
-            case CPP ->
-            {
-                compileCPP(result);
-            }
-            case Java ->
-            {
-                compileJava(result);
-            }
+            case C -> compileC(result);
+            case CPP -> compileCPP(result);
+            case Java -> compileJava(result);
         }
     }
 }
